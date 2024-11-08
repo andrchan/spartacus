@@ -56,7 +56,8 @@
     "passwordStrengthRequirements": "Here's a quick guide for a secure password: Use at least 8 characters with a mix of upper and lowercase letters, numbers, and symbols. Make sure not to use the same character consecutively.",
     "bothPasswordMustMatch": "Both password must match",
     "titleRequired": "Title is required.",
-    "postRegisterMessage": "Please log in with provided credentials."
+    "postRegisterMessage": "Please log in with provided credentials.",
+    "postRegisterSuccessMessage": "Successful Registration: Please log in with provided credentials"
   },
   "forgottenPassword": {
     "resetPassword": "Reset password",

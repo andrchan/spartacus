@@ -330,6 +330,13 @@ export interface FeatureTogglesInterface {
   a11yHideSelectBtnForSelectedAddrOrPayment?: boolean;
 
   /**
+   * If enabled, the "Checkout Shipping address/Payment" views
+   * will have a more a11y friendly selected label, including the context
+   * indicating weather the user is on a selected Address or Payment regsion.
+   */
+  a11ySelectLabelWithContextForSelectedAddrOrPayment?: boolean;
+
+  /**
    * Determines whether the controls in the `CarouselComponent` are focusable and accessible from the keyboard.
    */
   a11yFocusableCarouselControls?: boolean;
@@ -640,6 +647,11 @@ export interface FeatureTogglesInterface {
   a11yQTY2Quantity?: boolean;
 
   /**
+   * Changes the success message of successful registration to be more informative. Affects `RegisterComponentService`.
+   */
+  a11yPostRegisterSuccessMessage?: boolean;
+
+  /**
    * In `CardComponent`, place `Delete` button before `Cancel` button.
    */
   a11yDeleteButton2First?: boolean;
@@ -776,6 +788,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCartItemsLinksStyles: true,
   a11ySearchboxLabel: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: false,
+  a11ySelectLabelWithContextForSelectedAddrOrPayment: false,
   a11yFocusableCarouselControls: true,
   a11yUseTrapTabInsteadOfTrapInDialogs: false,
   cmsGuardsServiceUseGuardsComposer: false,
@@ -826,6 +839,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yViewHoursButtonIconContrast: false,
   a11yCheckoutStepsLandmarks: false,
   a11yQTY2Quantity: false,
+  a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,

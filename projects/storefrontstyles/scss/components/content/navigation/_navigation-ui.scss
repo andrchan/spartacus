@@ -477,7 +477,7 @@
       color: var(--cx-color-text);
       background-color: var(--cx-color-background);
       nav ul li > cx-generic-link + button {
-        border-inline-start: 1px solid var(--cx-color-background);
+        border-style: none;
       }
       button:hover {
         outline-color: var(--cx-color-dark);

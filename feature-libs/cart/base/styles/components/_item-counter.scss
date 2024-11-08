@@ -92,7 +92,7 @@
     }
 
     @include forFeature('a11yImproveContrast') {
-      font-size: var(--cx-font-size, 2rem);
+      font-size: var(--cx-font-size, 1.7rem);
       line-height: 0;
       color: var(--cx-color-text);
       padding-inline-start: 0;

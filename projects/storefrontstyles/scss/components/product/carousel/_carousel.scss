@@ -202,6 +202,33 @@
     }
   }
 
+  @mixin carousel-native-high-contrast {
+    @media (forced-colors: active) {
+      .indicators button .cx-icon {
+        forced-color-adjust: none;
+        background-color: Canvas;
+        border-color: CanvasText;
+        color: Canvas;
+      }
+
+      .indicators button[disabled] {
+        .cx-icon {
+          color: CanvasText;
+          background-color: Canvas;
+          padding: 2px;
+        }
+      }
+
+      .indicators button[aria-disabled='true'] {
+        .cx-icon {
+          color: CanvasText;
+          background-color: Canvas;
+          padding: 4px;
+        }
+      }
+    }
+  }
+
   @include cx-highContrastTheme {
     .indicators {
       button {
@@ -228,5 +255,7 @@
       background-color: var(--cx-color-dark);
       border: 3px solid var(--cx-color-dark);
     }
+
+    @include carousel-native-high-contrast;
   }
 }

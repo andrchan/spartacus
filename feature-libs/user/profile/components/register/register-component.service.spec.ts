@@ -1,6 +1,10 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { UntypedFormBuilder } from '@angular/forms';
-import { GlobalMessageService, GlobalMessageType } from '@spartacus/core';
+import {
+  FeatureConfigService,
+  GlobalMessageService,
+  GlobalMessageType,
+} from '@spartacus/core';
 import { UserRegisterFacade, UserSignUp } from '@spartacus/user/profile/root';
 import { of } from 'rxjs';
 import { RegisterComponentService } from './register-component.service';
@@ -13,6 +17,12 @@ class MockUserRegisterFacade implements Partial<UserRegisterFacade> {
 }
 class MockGlobalMessageService implements Partial<GlobalMessageService> {
   add = createSpy();
+}
+
+class MockFeatureConfigService {
+  isEnabled() {
+    return true;
+  }
 }
 
 describe('RegisterComponentService', () => {
@@ -28,6 +38,7 @@ describe('RegisterComponentService', () => {
         UntypedFormBuilder,
         { provide: UserRegisterFacade, useClass: MockUserRegisterFacade },
         { provide: GlobalMessageService, useClass: MockGlobalMessageService },
+        { provide: FeatureConfigService, useClass: MockFeatureConfigService },
       ],
     });
 
@@ -71,7 +82,7 @@ describe('RegisterComponentService', () => {
     it('should delegate to globalMessageService.add', () => {
       service.postRegisterMessage();
       expect(globalMessageService.add).toHaveBeenCalledWith(
-        { key: 'register.postRegisterMessage' },
+        { key: 'register.postRegisterSuccessMessage' },
         GlobalMessageType.MSG_TYPE_CONFIRMATION
       );
     });

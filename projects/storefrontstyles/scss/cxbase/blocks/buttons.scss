@@ -176,6 +176,7 @@ button {
     text-decoration: underline;
     cursor: pointer;
     display: inline-block;
+    border-style: none;
 
     &:focus {
       border-radius: 4px;

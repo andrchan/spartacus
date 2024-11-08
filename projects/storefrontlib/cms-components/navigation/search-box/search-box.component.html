@@ -82,7 +82,6 @@
         [attr.tabindex]="
           a11ySearchBoxMobileFocusEnabled ? getTabIndex(isMobile | async) : null
         "
-        [attr.aria-label]="'searchBox.placeholder' | cxTranslate"
         (focus)="a11ySearchBoxMobileFocusEnabled ? null : open()"
         (click)="open()"
         (input)="search(searchInput.value)"

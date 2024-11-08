@@ -26,7 +26,10 @@ export function signOut() {
 export function verifyGlobalMessageAfterRegistration() {
   const alert = alerts.getSuccessAlert();
 
-  alert.should('contain', 'Please log in with provided credentials.');
+  alert.should(
+    'contain',
+    'Successful Registration: Please log in with provided credentials'
+  );
   cy.location().should((location) => {
     expect(location.pathname).to.match(/\/login$/);
   });

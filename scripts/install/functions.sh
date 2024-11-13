@@ -51,7 +51,7 @@ function prepare_install {
 
     printh "Installing installation script prerequisites"
 
-    VERDACCIO_PID=`lsof -nP -i4TCP:4873 | grep LISTEN | tr -s ' ' | cut -d ' ' -f 2`
+    VERDACCIO_PID=$(lsof -nP -i4TCP:4873 | grep LISTEN | tr -s ' ' | cut -d ' ' -f 2 || true)
     if [[ -n ${VERDACCIO_PID} ]]; then
         echo "Verdaccio is already running with PID: ${VERDACCIO_PID}. Killing it."
         kill ${VERDACCIO_PID}

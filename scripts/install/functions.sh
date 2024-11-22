@@ -383,8 +383,14 @@ function install_from_sources {
 
     sleep 15
 
+    current_registry=$(npm config get registry)
+    echo "npm registry set to: $current_registry"
+
     (npm-cli-login -u verdaccio-user -p 1234abcd -e verdaccio-user@spartacus.com -r http://localhost:4873)
 
+    WHOAMI_OUTPUT=$(npm whoami --registry http://localhost:4873/ 2>&1)
+    echo "npm whoami output: ${WHOAMI_OUTPUT}"
+    
     printh "Publish Packages"
     for project in ${project_packages[@]}; do
         publish_package "${CLONE_DIR}/${project}"
